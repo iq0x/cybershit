@@ -1,7 +1,4 @@
-<html>
-<head>
-<style>
-  .rocket {
+.rocket {
       -webkit-animation:linear;
       -webkit-animation-name: fly;
       -webkit-animation-duration: 160s;
@@ -16,8 +13,7 @@
       height: 380px;
       vertical-align: center;
       z-index:2;
-
-  }
+}
 
   @-webkit-keyframes fly {
       0%   {bottom: 0%;}
@@ -26,11 +22,3 @@
       75%  {bottom: 75%;}
       100% {bottom: 100%;}
   }
-</style>
-
-</head>
-
-<body>
-  <div class="rocket"></div>
-</body>
-</html>
