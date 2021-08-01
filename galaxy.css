@@ -1,0 +1,366 @@
+/* ################## main ################## */
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+    background-image: url("img/star.gif");
+}
+  
+
+#main
+{
+    width:100%;
+   
+}
+
+#red
+{
+    color:red;
+     font-weight: bold;
+}
+
+
+
+#floor
+{
+    background-image: url("img/floor.gif");  
+    background-repeat: no-repeat;
+    background-size:100%;
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    height: 250px;
+    left:0;
+    z-index: 55;
+ }
+ 
+@media only screen and (max-width:1000px) 
+{
+	#floor 
+	{
+	    display: none;
+	}
+}
+  
+ i
+ {
+    color:blue;
+ }
+  
+
+
+
+/* ################## Menu ################## */
+
+#menu{
+    
+    width: 70px;
+    height:600px;
+    position: absolute;
+    left:10px;
+    bottom: 90px;
+    background-color: lightblue;
+    z-index:9999;
+    display: none;
+    border: 3px solid black;
+    border-radius: 20px;
+    vertical-align: middle;
+    text-align:center;
+    
+}
+
+#menu_box{
+    width: 70px;
+    height:70px;
+    vertical-align: middle;
+    text-align:center;
+    margin-top:5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    transition: transform .2s; /* Animation */
+}
+
+
+#menu_box:hover {
+  transform: scale(1.3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#question 
+{
+    width:70px;
+    height:70px;
+    position: fixed;
+    bottom:10px;
+    left:13px;
+    background-image: url("img/question.png");
+    background-repeat: no-repeat;
+    z-index:999;
+    transition: transform .2s;
+}
+  
+#question:hover 
+{
+    background-image: url("img/question_over.png");
+    transform: scale(1.3);
+}
+
+
+/* ################## ufo ################## */
+#ufo 
+{
+    position: absolute;
+    top:10%;
+    width: 400px;
+    height: 210px;
+    background-image: url("img/ufo.gif");
+    background-repeat: no-repeat;
+    -webkit-animation:linear infinite alternate;
+    -webkit-animation-name: fly2;
+    -webkit-animation-duration: 50s;
+}
+
+@-webkit-keyframes fly2 {
+    0% { left: 0;}
+    50%{ left : 50%;}
+    100%{ left: 0;}
+}
+
+@media only screen and (max-width:1000px) 
+{
+	#ufo 
+	{
+        display:none;  
+	}
+}
+
+
+/* ################## rocket ################## */
+
+
+#rocket 
+{
+    -webkit-animation:linear;
+    -webkit-animation-name: fly;
+    -webkit-animation-duration: 160s;
+    backface-visibility: hidden;
+    animation-iteration-count: infinite;
+    position:absolute;
+    bottom:10%;
+    left:5%;
+    background-image: url("img/rocket.gif");
+    background-repeat: no-repeat;
+    width: 165px;
+    height: 380px;
+    vertical-align: center;
+    z-index:2;
+    display:block;
+    cursor: url("img/aim.png"), auto;	
+}
+
+
+@-webkit-keyframes fly 
+{
+    0%   {bottom: 0%;}
+    25%  {bottom: 25%;}
+    50%  {bottom: 50%;}
+    75%  {bottom: 75%;}
+    100% {bottom: 100%;}
+}
+
+@media only screen and (max-width:1024px) 
+{
+	#rocket 
+	{
+        display:none;
+	    cursor: none;
+	}
+}
+
+
+/* ################## meteors ################## */
+
+
+#meteor 
+{
+    position: absolute;
+    top:0%;
+    right: 10%;
+    width: 220px;
+    height: 230px;
+    background-image: url("img/meteor.gif");
+    background-repeat: no-repeat;
+     animation: shake1 13.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation-iteration-count: infinite;
+   transition: transform .2s;
+}
+
+#meteor2 
+{
+    position: absolute;
+    top:30%;
+    right: 70%;
+    width: 150px;
+    height: 150px;
+    background-image: url("img/meteor_m.gif");
+    background-repeat: no-repeat;
+}
+
+#meteor3 
+{
+    position: absolute;
+    top:60%;
+    right: 40%;
+    width: 320px;
+    height: 330px;
+    background-image: url("img/meteor_xl.gif");
+    background-repeat: no-repeat;
+}
+
+ @media only screen and (max-width:800px) 
+{
+	#meteor, #meteor2, #meteor3 
+	{
+	    display:none;
+	}
+}
+
+
+/* ################## planet ################## */
+
+#planet 
+{
+    position: fixed;
+    top:-80px;
+    left:-250px;
+    width: 1000px;
+    height: 1000px;
+    background-image: url("img/earth.gif");
+    background-repeat: no-repeat;
+    animation: rollthis 160s infinite;
+    z-index:0;
+}
+
+@keyframes rollthis 
+{
+    100% {transform: rotate(360deg);}
+}
+
+@media only screen and (max-width:800px) 
+{
+	#planet 
+	{
+        display:none;  
+	}
+}
+
+
+/* ################## aliens ################## */
+
+
+#alien 
+{
+    position: absolute;
+    bottom:5%;
+    right: 5%;
+    width: 220px;
+    height: 220px;
+    background-image: url("img/alien.gif");
+    background-repeat: no-repeat;
+    z-index:60;
+     animation: shake 13.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation-iteration-count: infinite;
+   transition: transform .9s;
+}
+
+@keyframes shake 
+{
+  10%, 90% 
+  {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% 
+  {
+    transform: translate3d(35px, 0, 0);
+  }
+
+  30%, 50%, 70% 
+  {
+    transform: translate3d(-4px, 0, 0);
+  }
+}
+
+
+#alien_s 
+{
+    position: absolute;
+    bottom:5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background-image: url("img/alien_s.gif");
+    background-repeat: no-repeat;
+    z-index:60;
+     animation: shake 23.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation-iteration-count: infinite;
+   transition: transform .9s;
+}
+
+@keyframes shake 
+{
+  10%, 90% 
+  {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% 
+  {
+    transform: translate3d(35px, 0, 0);
+  }
+
+  30%, 50%, 70% 
+  {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+}
+
+@media only screen and (max-width:800px) 
+{
+	#alien, #alien_s
+	{
+	    display:block;
+	    left:0;
+    }
+}
+
+
+/* ################## bubble ################## */
+
+#bubble {
+    text-align:center;
+   
+    top:270px;
+    right:10%;
+    width:30%;
+    font-size: 2em;
+    position:absolute;
+    padding: 1em; border: 8px solid #3FFF7F;
+    margin:0 auto;
+    border-radius: 22px;
+    background: #fff;
+    
+}
+
+@media only screen and (max-width:800px) 
+{
+	#bubble 
+	{
+    	margin: auto;
+        position:static;
+    	width:70%;
+        display: block;
+	}
+}
+
