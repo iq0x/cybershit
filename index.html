@@ -1,32 +1,41 @@
 <html>
     <head>
-      <title>cybershit</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-      <link rel="stylesheet" href="galaxy.css">
-      <script src="spaceshit.js"></script> 
+        <title>cybershit</title>
+        <meta name="viewport" content="width=devicve-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="galaxy.css">
+        <script src="spaceshit.js"></script> 
     </head>
     
     <body>
         <div id="main">
-            <div id="rocket" onclick="explode()"></div>
+            <div id="bubble">
+                <table>
+                    <tr>
+                        <td><img id="avatar" src="img/iq9x_avatar.gif"></td>
+                        <td><span id="bubble_box">Hello my name <b><i>iq0x</i></b> your personal assistent. Welcome to the cybershit universe.</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="rocket" onclick="explode_rocket()"></div>
             <div id="planet"></div>
-            <div id="ufo"></div>
+            <div id="score">Score: <span id="score_value">0</span></div>
+            <aside class="centrum"> 
+                <span class="moveY">
+			        <span id="bong" onclick="explode_bong()"></span>
+		        </span>
+	        </aside>
+            <div id="ufo" onclick="explode_ufo()"></div>
             <div id="meteor"></div>
             <div id="meteor2"></div>
             <div id="meteor3"></div>
-            <div id="alien"></div>
+            <div id="alien" onclick="punch_alien()"></div>
             <div id="alien_s"></div>
             <div id="floor"></div>
             <div id="menu">
-                <div id="menu_box"><img src="img/bomb.png" width="80%"></div>
-                <div id="menu_box"><img src="img/skull.png" width="80%"></div>
-                <div id="menu_box"></div>
-                <div id="menu_box"></div>
                 <div id="menu_box" onclick="reset()"><img src="img/reset.png" width="80%"></div>
                 <div id="menu_box" onclick="get_info()"><img src="img/info.png" width="80%"></div>
             </div>
             <div id="question" onclick="open_menu()"></div>
-            <div id="bubble"><b>Hello my name <i>iq0x</i> your personal assistent. Welcome to the cybershit universe.</b></div>
         </div>
     </body>
 </html>
