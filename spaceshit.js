@@ -3,15 +3,20 @@ var ufo_clicked = false;
 var bong_clicked = false;
 var rocket_clicked = false; 
 var friend_clicked = false; 
+var level2 = 10;
 
-
+var audio_mega_explosion = new Audio('mega_explosion.mp3');
 var audio_victory = new Audio('victory.mp3');
-   
+
 
 window.onload = function()
 {
     document.getElementById("score_value").innerHTML = total_hits;
 };
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 
 
 function win()
@@ -171,20 +176,37 @@ function punch_alien()
 
 function punch_boss1() 
 {
-    if (total_hits < 30)
+    if (total_hits < level2)
     {
         var audio_punch = new Audio('punch.mp3');
         audio_punch.play();
         total_hits++;
         document.getElementById("score_value").innerHTML = total_hits;
         document.getElementById("bubble_box").innerHTML = "<b>ahhhhhhhhhhh</b>";
-        document.getElementById("avatar").src="img/alien_avatar.gif";
+        document.getElementById("avatar").src="img/boss1_avatar.gif";
+        var boss1_slap = getRandomInt(3);
+        if (boss1_slap == 1)
+        {
+            document.getElementById('boss1').style.backgroundImage="url(img/boss1_slap1.gif)";
+            document.getElementById("bubble_box").innerHTML = "<b>noooooo</b>";
+        }
+        else if (boss1_slap == 2)
+        {
+            document.getElementById('boss1').style.backgroundImage="url(img/boss1_slap2.gif)"; 
+            document.getElementById("bubble_box").innerHTML = "<b>fckkkkkkkk</b>";
+        }
+        else
+        {
+            document.getElementById('boss1').style.backgroundImage="url(img/boss1_slap3.gif)";
+        }
+        
     }
-    else
+    else if (total_hits = level2)
     {
         document.getElementById('boss1').style.backgroundImage="url(img/boss_kill.gif)";
-        document.getElementById("bubble_box").innerHTML = "<b>winnnnnner</b>";
-        document.getElementById("avatar").src="img/alien_avatar.gif";
+        document.getElementById("bubble_box").innerHTML = "<b>CONGRATULATION!!!</b><br> you are the best man!!!<br>level 2 upcoming soon,";
+        document.getElementById("avatar").src="img/iq9x_avatar.gif";
+        audio_mega_explosion.play();
         audio_victory.play();
     }
 }
