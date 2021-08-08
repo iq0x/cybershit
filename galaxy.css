@@ -9,19 +9,18 @@ body
 #main
 {
     width:100%;
-   
 }
 
 #red
 {
     color:red;
-     font-weight: bold;
+    font-weight: bold;
 }
 
 a
 {
     font-size: 0.7em;   
-     text-decoration: none;
+    text-decoration: none;
 }
 
 #floor
@@ -42,7 +41,6 @@ a
     color:blue;
  }
  
- 
 #score
 {
     padding-top: 10px;
@@ -56,7 +54,7 @@ a
     background-color: green;
     position:absolute;
     top:5%;
-    width: 150px;
+    width: 170px;
     height: 50px;
     right:0;
     z-index: 55;
@@ -64,7 +62,8 @@ a
   
 /* #################################### Menu #################################### */
 
-#menu{
+#menu
+{
     width: 70px;
     position: absolute;
     left:10px;
@@ -78,7 +77,8 @@ a
     text-align:center;
 }
 
-#menu_box{
+#menu_box
+{
     width: 70px;
     height:70px;
     vertical-align: middle;
@@ -90,8 +90,8 @@ a
     transition: transform .2s;
 }
 
-
-#menu_box:hover {
+#menu_box:hover 
+{
   transform: scale(1.3);
 }
 
@@ -114,7 +114,6 @@ a
     transform: scale(1.3);
 }
 
-
 /* #################################### ufo #################################### */
 #ufo 
 {
@@ -125,24 +124,18 @@ a
     background-image: url("img/ufo.gif");
     background-repeat: no-repeat;
     cursor: url("img/aim.png"), auto;
-    -webkit-animation:linear infinite alternate;
-    -webkit-animation-name: fly2;
-    -webkit-animation-duration: 50s;
-}
-
-@-webkit-keyframes fly2 {
-    0% { left: 0;}
-    50%{ left : 50%;}
-    100%{ left: 0;}
+    animation:linear infinite alternate;
+    animation-name: fly_horizontal;
+    animation-duration: 50s;
 }
 
 /* #################################### rocket #################################### */
 
 #rocket 
 {
-    -webkit-animation:linear;
-    -webkit-animation-name: fly;
-    -webkit-animation-duration: 160s;
+    animation:linear;
+    animation-name: fly_vertical;
+    animation-duration: 160s;
     backface-visibility: hidden;
     animation-iteration-count: infinite;
     position:absolute;
@@ -158,67 +151,61 @@ a
     cursor: url("img/aim.png"), auto;	
 }
 
-@-webkit-keyframes fly 
+/* #################################### friend #################################### */
+
+.centrumF 
 {
-    0%   {bottom: 0%;}
-    25%  {bottom: 25%;}
-    50%  {bottom: 50%;}
-    75%  {bottom: 75%;}
-    100% {bottom: 100%;}
+	height: 6px;
+	right: 60%;
+	position: absolute;
+	top: 10%;
+	width: 150px;
+	animation: fly_horizontal 50s ease-in-out 0s infinite;
+}
+
+.moveYY 
+{
+	height: 500px;
+	position: absolute;
+	top: 100px;
+	width: 150px;
+	animation: rotate 46s linear 0s infinite;
+}
+
+#friend 
+{
+	left: 0px;
+	position: absolute;
+    background-image: url("img/corona.png");
+    background-repeat: no-repeat;
+    width: 170px;
+    height: 180px;
+    cursor: url("img/aim.png"), auto;
 }
 
 /* #################################### bong #################################### */
 
-
-section {
-    border: 3px solid green;
-	float: left;
-	height: 300px;
-	margin-right: 20px;
-	padding: 10px;
-	position: absolute;
-	width: 100%;
-}
-
-section:after {
-	height: 48px;
-	left: 0px;
-	position: absolute;
-	top: 50px;
-	width: 100%;
-}
-
-.centrum {
+.centrum 
+{
 	height: 6px;
 	left: 0px;
 	position: absolute;
 	top: 50%;
 	width: 150px;
-	animation: xAchse 80s ease-in-out 0s infinite;
+	animation: fly_horizontal 80s ease-in-out 0s infinite;
 }
 
-@keyframes xAchse {
-	0% {
-		transform: translateX(0px);
-	}
-	50% {
-		transform: translateX(1050px);
-	}
-	100% {
-		transform: translateX(0px);
-	}
-}
-
-.moveY {
+.moveY 
+{
 	height: 50px;
 	position: absolute;
 	top: 50%;
 	width: 150px;
-	animation: orbit 26s linear 0s infinite;
+	animation: rotate 26s linear 0s infinite;
 }
 
-#bong {
-
+#bong 
+{
 	left: 0px;
 	position: absolute;
     background-image: url("img/bong.png");
@@ -226,15 +213,6 @@ section:after {
     width: 165px;
     height: 380px;
     cursor: url("img/aim.png"), auto;
-}
-
-@keyframes orbit {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
 }
 
 /* #################################### meteors #################################### */
@@ -286,13 +264,24 @@ section:after {
     height: 1000px;
     background-image: url("img/earth1.gif");
     background-repeat: no-repeat;
-    animation: rollthis 360s infinite;
+    animation: rotate 360s infinite;
     z-index:0;
 }
 
-@keyframes rollthis 
+/* #################################### boss1 #################################### */
+
+#boss1 
 {
-    100% {transform: rotate(360deg);}
+    cursor: url("img/hand.png"), auto;
+    position: fixed;
+    top:50px;
+    left:150px;
+    width: 500px;
+    height: 530px;
+    background-image: url("img/boss1.gif");
+    background-repeat: no-repeat;
+    z-index:99;
+    display: none;
 }
 
 /* #################################### aliens #################################### */
@@ -313,24 +302,6 @@ section:after {
     transition: transform .9s;
 }
 
-@keyframes shake 
-{
-  10%, 90% 
-  {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% 
-  {
-    transform: translate3d(35px, 0, 0);
-  }
-
-  30%, 50%, 70% 
-  {
-    transform: translate3d(-4px, 0, 0);
-  }
-}
-
 #alien_s 
 {
     position: absolute;
@@ -344,24 +315,6 @@ section:after {
     animation: shake 23.82s cubic-bezier(.36,.07,.19,.97) both;
     animation-iteration-count: infinite;
     transition: transform .9s;
-}
-
-@keyframes shake 
-{
-  10%, 90% 
-  {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% 
-  {
-    transform: translate3d(35px, 0, 0);
-  }
-
-  30%, 50%, 70% 
-  {
-    transform: translate3d(-4px, 0, 0);
-  }
 }
 
 /* #################################### bubble #################################### */
@@ -395,7 +348,9 @@ middle
     padding:auto;    
 }
 
+/* #################################################################################### */
 /* #################################### responisve #################################### */
+/* #################################################################################### */
 
 @media only screen and (max-width:1024px) 
 {
@@ -419,4 +374,36 @@ middle
 	{
 	    display:none;
 	}
+}
+
+/* #################################################################################### */
+/* #################################### animation ##################################### */
+/* #################################################################################### */
+
+@keyframes fly_horizontal 
+{
+    0% { left: 0;}
+    50%{ left : 50%;}
+    100%{ left: 0;}
+}
+
+@keyframes fly_vertical
+{
+    0%   {bottom: 0;}
+    25%  {bottom: 25%;}
+    50%  {bottom: 50%;}
+    75%  {bottom: 75%;}
+    100% {bottom: 100%;}
+}
+
+@keyframes shake 
+{
+    10%, 90%{transform: translate3d(-1px, 0, 0);}
+    20%, 80%{transform: translate3d(35px, 0, 0);}
+    30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+}
+
+@keyframes rotate 
+{
+    100% {transform: rotate(360deg);}
 }
