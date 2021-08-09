@@ -3,17 +3,18 @@ var ufo_clicked = false;
 var bong_clicked = false;
 var rocket_clicked = false; 
 var friend_clicked = false; 
-var level2 = 20;
+var level2 = 14;
 var alien_slaps = 0;
-
+boss_life = 10; 
+let welcome = 'Hello my name <b><i>iq0x</i></b>, your personal assistent.<br>  Welcome to the cybershit universe,<br> a <b>TSBFARPG</b> (totally stupid brain fckd action role play game)';
 var audio_mega_explosion = new Audio('mega_explosion.mp3');
 var audio_victory = new Audio('victory.mp3');
 var intro = new Audio('x.mp3');
 var final = new Audio('final.mp3');
 
-
 window.onload = function()
 {
+    document.getElementById('bubble_box').innerHTML = welcome;
     document.getElementById("score_value").innerHTML = total_hits;
     intro.play();
 };
@@ -21,7 +22,6 @@ window.onload = function()
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
-
 
 function win()
 {
@@ -41,6 +41,7 @@ function win()
         document.getElementById('bong').style.display="none";
         document.getElementById('friend').style.display="none";
         document.getElementById('boss1').style.display="block";
+        document.getElementById('boss_life').style.display="block";
         
     }
     document.getElementById("score_value").innerHTML = total_hits;
@@ -133,13 +134,14 @@ function get_info()
 {
     document.getElementById("bubble_box").innerHTML = "<b>info</b><br>best resolution on 3840px * 1080px<br>mobil less 1024px <span id='red'>no effects</span> available! <br> <b>dl:</b> <br><a href='https://github.com/iq0x/cybershit'>https://github.com/iq0x/cybershit</a><br><b>donate:</b><br><a href='https://www.blockchain.com/btc/address/bc1q427d9xy8t00dnnum2e0udaxhyyatx2tfr2dmkt'>bc1q427d9xy8t00dnnum2e0udaxhyyatx2tfr2dmkt</a><br>";
     document.getElementById("avatar").src='img/iq9x_avatar.gif';
-    
 } 
 
 function reset() 
 {
     intro.play();
     total_hits = 0;
+    boss_life = 10;
+    var alien_slaps = 0;
     ufo_clicked = false;
     bong_clicked = false;
     rocket_clicked = false;
@@ -153,7 +155,7 @@ function reset()
     document.getElementById('ufo').style.backgroundImage="url(img/ufo.gif)";
     document.getElementById('friend').style.backgroundImage="url(img/corona.png)";
     
-    document.getElementById('bubble_box').innerHTML = "Hello my name <b><i>iq0x</i></b>, your personal assistent.<br>  Welcome to the cybershit universe,<br> a <b>SBFRPG</b> (stupid brain fckd role play game)";
+    document.getElementById('bubble_box').innerHTML = welcome;
     document.getElementById('avatar').src='img/iq9x_avatar.gif';
     document.getElementById('rocket').style.bottom="0%";
     
@@ -168,6 +170,7 @@ function reset()
     document.getElementById('boss1').style.display="none";
     
     document.getElementById('boss1').style.backgroundImage="url(img/boss1.gif)";
+    document.getElementById('boss_life').style.display="none";
     document.getElementById('bubble').style.backgroundColor="white";
 } 
 
@@ -176,24 +179,34 @@ function punch_alien()
     var audio_punch = new Audio('punch.mp3');
     audio_punch.play();
     alien_slaps++;
-    if (alien_slaps < 7)
+    if (total_hits < level2)
     {
-        document.getElementById("bubble_box").innerHTML = "<b>autsch</b>";
-        document.getElementById("avatar").src="img/alien_avatar.gif";  
+        if (alien_slaps < 7)
+        {
+            document.getElementById("bubble_box").innerHTML = "<b>autsch</b>";
+            document.getElementById("avatar").src="img/alien_avatar.gif";  
+        }
+        else
+        {
+            document.getElementById("bubble_box").innerHTML = "<b>enough dude find and kill the objects....!</b>";  
+        }
     }
     else
     {
-        document.getElementById("bubble_box").innerHTML = "<b>enough dude find and kill the objects....!</b>";  
+        document.getElementById("bubble_box").innerHTML = "<b>you are the winner bro, why you slap me bitch....!</b>";     
     }
+    
 }
 
-function punch_boss1() 
+function punch_boss() 
 {
     if (total_hits < level2)
     {
         var audio_punch = new Audio('punch.mp3');
         audio_punch.play();
         total_hits++;
+        boss_life--;
+        document.getElementById("boss_life_value").innerHTML = boss_life;
         document.getElementById("score_value").innerHTML = total_hits;
         document.getElementById("bubble_box").innerHTML = "<b>ahhhhhhhhhhh</b>";
         document.getElementById("avatar").src="img/boss1_avatar.gif";
@@ -223,5 +236,3 @@ function punch_boss1()
         audio_victory.play();
     }
 }
-
-
