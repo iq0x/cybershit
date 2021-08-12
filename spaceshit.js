@@ -5,12 +5,13 @@ var rocket_clicked = false;
 var friend_clicked = false; 
 var level2 = 14;
 var alien_slaps = 0;
-boss_life = 10; 
+var boss_life = 10; 
 let welcome = 'Hello my name <b><i>iq0x</i></b>, your personal assistent.<br>  Welcome to the cybershit universe,<br> a <b>TSBFARPG</b> (totally stupid brain fckd action role play game)';
-var audio_mega_explosion = new Audio('mega_explosion.mp3');
-var audio_victory = new Audio('victory.mp3');
-var intro = new Audio('x.mp3');
-var final = new Audio('final.mp3');
+var audio_mega_explosion = new Audio('sounds/mega_explosion.mp3');
+var audio_victory = new Audio('sounds/victory.mp3');
+var intro = new Audio('sounds/x.mp3');
+var final = new Audio('sounds/final.mp3');
+
 
 window.onload = function()
 {
@@ -47,25 +48,13 @@ function win()
     document.getElementById("score_value").innerHTML = total_hits;
 }
 
-function open_menu() 
-{
-    var open = document.getElementById("menu");
-    if (open.style.display == "none") 
-    {
-        open.style.display = "block";
-    } 
-    else 
-    {
-        open.style.display = "none";
-    }
-} 
 
 function explode_ufo() 
 {
     
     if (ufo_clicked !== true)
     {
-        var audio_explosion = new Audio('explosion.mp3');
+        var audio_explosion = new Audio('sounds/explosion.mp3');
         audio_explosion.play();
         total_hits++;
         document.getElementById("score_value").innerHTML = total_hits;
@@ -82,7 +71,7 @@ function explode_bong()
     
 if (bong_clicked !== true)
     {
-        var audio_explosion = new Audio('explosion.mp3');
+        var audio_explosion = new Audio('sounds/explosion.mp3');
         audio_explosion.play();
         total_hits++;
         document.getElementById("score_value").innerHTML = total_hits;
@@ -100,7 +89,7 @@ function explode_rocket()
 
     if (rocket_clicked !== true)
     {
-        var audio_explosion = new Audio('explosion.mp3');
+        var audio_explosion = new Audio('sounds/explosion.mp3');
         audio_explosion.play();
         total_hits++;
         document.getElementById("score_value").innerHTML = total_hits;
@@ -117,7 +106,7 @@ function explode_friend()
 
     if (friend_clicked !== true)
     {
-        var audio_explosion = new Audio('explosion.mp3');
+        var audio_explosion = new Audio('sounds/explosion.mp3');
         audio_explosion.play();
         total_hits++;
         document.getElementById("score_value").innerHTML = total_hits;
@@ -176,7 +165,7 @@ function reset()
 
 function punch_alien() 
 {
-    var audio_punch = new Audio('punch.mp3');
+    var audio_punch = new Audio('sounds/punch.mp3');
     audio_punch.play();
     alien_slaps++;
     if (total_hits < level2)
@@ -202,7 +191,7 @@ function punch_boss()
 {
     if (total_hits < level2)
     {
-        var audio_punch = new Audio('punch.mp3');
+        var audio_punch = new Audio('sounds/punch.mp3');
         audio_punch.play();
         total_hits++;
         boss_life--;
@@ -230,7 +219,7 @@ function punch_boss()
     else if (total_hits = level2)
     {
         document.getElementById('boss1').style.backgroundImage="url(img/boss_kill.gif)";
-        document.getElementById("bubble_box").innerHTML = "<b>CONGRATULATION!!!</b><br> you are the best man!!!<br>level 2 upcoming soon, stay tuned<br><b>donate NOW and feel better:</b><br><img src='img/donate_btc.gif' width='50%'><a href='https://www.blockchain.com/btc/address/bc1q427d9xy8t00dnnum2e0udaxhyyatx2tfr2dmkt'>bc1q427d9xy8t00dnnum2e0udaxhyyatx2tfr2dmkt</a>";
+        document.getElementById("bubble_box").innerHTML = "<b>CONGRATULATION!!!</b><br> you are the best man!!!<br><a href='jungle.php'>level 2</a><br><b>donate NOW and feel better:</b><br><img src='img/donate_btc.gif' width='50%'><a href='https://www.blockchain.com/btc/address/bc1q427d9xy8t00dnnum2e0udaxhyyatx2tfr2dmkt'>bc1q427d9xy8t00dnnum2e0udaxhyyatx2tfr2dmkt</a>";
         document.getElementById("avatar").src="img/iq9x_avatar.gif";
         audio_mega_explosion.play();
         audio_victory.play();
