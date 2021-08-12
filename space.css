@@ -1,27 +1,10 @@
-/* #################################### main #################################### */
-
 body
 {
     font-family: 'Roboto', sans-serif;
     background-image: url("img/star.gif");
 }
-  
-#main
-{
-    width:100%;
-}
 
-#red
-{
-    color:red;
-    font-weight: bold;
-}
-
-a
-{
-    font-size: 0.7em;   
-    text-decoration: none;
-}
+/* #################################### floor #################################### */
 
 #floor
 {
@@ -35,92 +18,17 @@ a
     left:0;
     z-index: 55;
  }
- 
- i
- {
-    color:blue;
- }
- 
-#score
-{
-    padding-top: 10px;
-    padding-left: 5px;
-    right:10%;
-    border: 5px solid white;
-    border-radius: 10px;
-    text-align:left;
-    font-size: 2em;
-    color: white;
-    background-color: green;
-    position:absolute;
-    top:5%;
-    width: 170px;
-    height: 50px;
-    right:0;
-    z-index: 55;
- }
-  
-/* #################################### Menu #################################### */
 
-#menu
-{
-    width: 70px;
-    position: absolute;
-    left:10px;
-    bottom: 90px;
-    background-color: lightblue;
-    z-index:9999;
-    display: none;
-    border: 3px solid black;
-    border-radius: 20px;
-    vertical-align: middle;
-    text-align:center;
-}
 
-#menu_box
-{
-    width: 70px;
-    height:70px;
-    vertical-align: middle;
-    text-align:center;
-    margin-top:5%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    transition: transform .2s;
-}
-
-#menu_box:hover 
-{
-  transform: scale(1.3);
-}
-
-#question 
-{
-    width:70px;
-    height:70px;
-    position: fixed;
-    bottom:10px;
-    left:13px;
-    background-image: url("img/question.png");
-    background-repeat: no-repeat;
-    z-index:999;
-    transition: transform .2s;
-}
-  
-#question:hover 
-{
-    background-image: url("img/question_over.png");
-    transform: scale(1.3);
-}
 
 /* #################################### ufo #################################### */
 #ufo 
 {
+
     position: absolute;
     top:10%;
-    width: 400px;
-    height: 210px;
+    width: 150px;
+    height: 80px;
     background-image: url("img/ufo.gif");
     background-repeat: no-repeat;
     cursor: url("img/aim.png"), auto;
@@ -133,6 +41,7 @@ a
 
 #rocket 
 {
+
     animation:linear;
     animation-name: fly_vertical;
     animation-duration: 160s;
@@ -143,9 +52,8 @@ a
     left:5%;
     background-image: url("img/rocket.gif");
     background-repeat: no-repeat;
-    width: 165px;
+    width: 240px;
     height: 380px;
-    vertical-align: center;
     z-index:2;
     display:block;
     cursor: url("img/aim.png"), auto;	
@@ -157,7 +65,7 @@ a
 {
 	height: 6px;
 	right: 60%;
-	position: absolute;
+	position: fixed;
 	top: 10%;
 	width: 150px;
 	animation: fly_horizontal 50s ease-in-out 0s infinite;
@@ -166,7 +74,7 @@ a
 .moveYY 
 {
 	height: 500px;
-	position: absolute;
+	position: fixed;
 	top: 100px;
 	width: 150px;
 	animation: rotate 46s linear 0s infinite;
@@ -175,7 +83,7 @@ a
 #friend 
 {
 	left: 0px;
-	position: absolute;
+	position: fixed;
     background-image: url("img/corona.png");
     background-repeat: no-repeat;
     width: 170px;
@@ -189,29 +97,30 @@ a
 {
 	height: 6px;
 	left: 0px;
-	position: absolute;
-	top: 50%;
+	position: fixed;
+	top: 20%;
 	width: 150px;
 	animation: fly_horizontal 80s ease-in-out 0s infinite;
 }
 
 .moveY 
 {
-	height: 50px;
-	position: absolute;
-	top: 50%;
+	height: 550px;
+	position: fixed;
+	top: 20%;
 	width: 150px;
 	animation: rotate 26s linear 0s infinite;
 }
 
 #bong 
 {
-	left: 0px;
-	position: absolute;
+    
+	bottom: 0px;
+	position: fixed;
     background-image: url("img/bong.png");
     background-repeat: no-repeat;
     width: 165px;
-    height: 380px;
+    height: 165px;
     cursor: url("img/aim.png"), auto;
 }
 
@@ -275,14 +184,40 @@ a
     cursor: url("img/hand.png"), auto;
     position: fixed;
     top:50px;
-    left:150px;
+    left:20%;
     width: 500px;
     height: 530px;
     background-image: url("img/boss1.gif");
     background-repeat: no-repeat;
     z-index:99;
     display: none;
+    transform: scale(1.5);
+	animation: pulse 2s infinite;
 }
+
+/* #################################### boss_life #################################### */
+
+#boss_life 
+{
+    padding-top: 10px;
+    padding-left: 5px;
+    left:0;
+    border: 5px solid white;
+    border-radius: 10px;
+    text-align:left;
+    font-size: 2em;
+    color: white;
+    background-color: red;
+    position:absolute;
+    top:2%;
+    width: 200px;
+    height: 50px;
+    right:0;
+    z-index: 55;
+    display: none;
+}
+
+
 
 /* #################################### aliens #################################### */
 
@@ -317,36 +252,6 @@ a
     transition: transform .9s;
 }
 
-/* #################################### bubble #################################### */
-
-#bubble {
-    text-align:center;
-    top:200px;
-    right:5%;
-    width:30%;
-    position:absolute;
-    padding: 1em; border: 8px solid #3FFF7F;
-    margin:0 auto;
-    border-radius: 22px;
-    background: #fff;
-    float:left;
-}
-
-#bubble_box 
-{
-    font-size: 1.4em;
-}
-
-#avatar 
-{
-    text-align:center;
-    margin:auto;
-}
-
-middle
-{
-    padding:auto;    
-}
 
 /* #################################################################################### */
 /* #################################### responisve #################################### */
@@ -390,9 +295,6 @@ middle
 @keyframes fly_vertical
 {
     0%   {bottom: 0;}
-    25%  {bottom: 25%;}
-    50%  {bottom: 50%;}
-    75%  {bottom: 75%;}
     100% {bottom: 100%;}
 }
 
@@ -406,4 +308,11 @@ middle
 @keyframes rotate 
 {
     100% {transform: rotate(360deg);}
+}
+
+
+@keyframes pulse {
+	0% {transform: scale(0.5);}
+	50% {transform: scale(3);}
+	100% {transform: scale(0.7);}
 }
