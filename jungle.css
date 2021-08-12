@@ -3,6 +3,11 @@ body
     background-image:url("img/gras.gif");
 }
 
+a
+{
+    text-decoration: none;
+    color: white;
+}
 /* #################################### monster #################################### */
 #monster 
 {
@@ -54,7 +59,7 @@ body
     left: 5%;
     width: 220px;
     height: 220px;
-    background-image: url("img/alien_pirategun.png");
+    background-image: url("img/alien_pirategun.gif");
     background-repeat: no-repeat;
     z-index:60;
     animation: shake 13.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -144,38 +149,43 @@ body
 
 #life
 {
+    font-weight:bold;
     padding-top: 10px;
     padding-left: 5px;
-    left:0;
     border: 5px solid white;
     border-radius: 10px;
-    text-align:left;
+    text-align:right;
     font-size: 2em;
-    color: white;
-    background-color: green;
+    color: black;
+    background-image: url("img/life.gif");
+    background-color:white;
+    background-repeat: no-repeat;
     position:absolute;
     top:2%;
-    width: 170px;
+    width: 100px;
     height: 50px;
-    right:0;
+    left:0;
     z-index: 55;
  }
  
 #ammo_maschinegun
 {
+    font-weight:bold;
+    color: black;
     margin-top: 90px;
     padding-top: 5px;
     padding-left: 5px;
     left:0;
     border: 5px solid white;
     border-radius: 10px;
-    text-align:left;
+    text-align:right;
     font-size: 2em;
-    color: white;
-    background-color: green;
+    background-image: url("img/maschinegun_ammo.gif");
+    background-color:white;
+    background-repeat: no-repeat;
     position:absolute;
-    top:2%;
-    width: 170px;
+   
+    width: 100px;
     height: 50px;
     right:0;
     z-index: 55;
@@ -183,19 +193,45 @@ body
  
  #ammo_pirategun
 {
-    margin-top: 175px;
+    font-weight:bold;
+    margin-top: 165px;
     padding-top: 5px;
     padding-left: 5px;
     left:0;
     border: 5px solid white;
     border-radius: 10px;
-    text-align:left;
+    text-align:right;
     font-size: 2em;
-    color: white;
-    background-color: green;
+    color: black;
+    background-image: url("img/pirategun_ammo.gif");
+    background-repeat: no-repeat;
+    background-color: white;
     position:absolute;
-    top:2%;
-    width: 170px;
+  
+    width: 100px;
+    height: 50px;
+    right:0;
+    z-index: 55;
+ }
+ 
+  #healing
+{
+    font-weight:bold;
+    margin-top: 240px;
+    padding-top: 5px;
+    padding-left: 5px;
+    left:0;
+    border: 5px solid white;
+    border-radius: 10px;
+    text-align:right;
+    font-size: 2em;
+    color: black;
+    background-image: url("img/healing.gif");
+    background-repeat: no-repeat;
+    background-color: white;
+    position:absolute;
+
+    width: 100px;
     height: 50px;
     right:0;
     z-index: 55;
@@ -214,7 +250,7 @@ body
     color: white;
     background-color: green;
     position:absolute;
-    top:2%;
+
     width: 210px;
     height: 50px;
     right:0;
