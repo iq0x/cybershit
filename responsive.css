@@ -1,0 +1,11 @@
+@media only screen and (max-width:1240px) 
+{
+	#monster, #clouds, #bat, #floor, #ufo, #alien, #alien_s, #monster, #bubble, #start_game, #score, #information
+	{
+	    display:none;
+	}
+	#alertbox
+	{
+	    display:block;
+	}
+}
