@@ -1,0 +1,264 @@
+
+#floor
+{
+    background-image: url("img/floor.png");  
+    background-repeat: no-repeat;
+    background-size:100%;
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    height: 250px;
+    left:0;
+    z-index: 55;
+}
+
+#ufo 
+{
+    position: absolute;
+    top:10%;
+    width: 150px;
+    height: 80px;
+    background-image: url("img/ufo.gif");
+    background-repeat: no-repeat;
+    cursor: url("img/aim.png"), auto;
+    animation:linear infinite alternate;
+    animation-name: fly_horizontal;
+    animation-duration: 50s;
+}
+
+#rocket 
+{
+    animation:linear;
+    animation-name: fly_vertical;
+    animation-duration: 160s;
+    backface-visibility: hidden;
+    animation-iteration-count: infinite;
+    position:absolute;
+    bottom:10%;
+    left:5%;
+    background-image: url("img/rocket.gif");
+    background-repeat: no-repeat;
+    width: 240px;
+    height: 380px;
+    z-index:2;
+    display:block;
+    cursor: url("img/aim.png"), auto;	
+}
+
+.centrumF 
+{
+	height: 6px;
+	right: 60%;
+	position: fixed;
+	top: 10%;
+	width: 150px;
+	animation: fly_horizontal 50s ease-in-out 0s infinite;
+}
+
+.moveYY 
+{
+	height: 500px;
+	position: fixed;
+	top: 100px;
+	width: 150px;
+	animation: rotate 46s linear 0s infinite;
+}
+
+#friend 
+{
+	left: 0px;
+	position: fixed;
+    background-image: url("img/corona.png");
+    background-repeat: no-repeat;
+    width: 170px;
+    height: 180px;
+    cursor: url("img/aim.png"), auto;
+}
+
+.centrum 
+{
+	height: 6px;
+	left: 0px;
+	position: fixed;
+	top: 20%;
+	width: 150px;
+	animation: fly_horizontal 80s ease-in-out 0s infinite;
+}
+
+.moveY 
+{
+	height: 550px;
+	position: fixed;
+	top: 20%;
+	width: 150px;
+	animation: rotate 26s linear 0s infinite;
+}
+
+#bong 
+{
+    
+	bottom: 0px;
+	position: fixed;
+    background-image: url("img/bong.png");
+    background-repeat: no-repeat;
+    width: 165px;
+    height: 165px;
+    cursor: url("img/aim.png"), auto;
+}
+
+#meteor 
+{
+    position: absolute;
+    top:0%;
+    right: 10%;
+    width: 220px;
+    height: 230px;
+    background-image: url("img/meteor.gif");
+    background-repeat: no-repeat;
+    animation: shake1 13.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation-iteration-count: infinite;
+    transition: transform .2s;
+}
+
+#meteor2 
+{
+    position: absolute;
+    top:30%;
+    right: 70%;
+    width: 150px;
+    height: 150px;
+    background-image: url("img/meteor_m.gif");
+    background-repeat: no-repeat;
+}
+
+#meteor3 
+{
+    position: absolute;
+    top:60%;
+    right: 40%;
+    width: 320px;
+    height: 330px;
+    background-image: url("img/meteor_xl.gif");
+    background-repeat: no-repeat;
+}
+
+#planet 
+{
+    position: fixed;
+    top:-80px;
+    left:-250px;
+    width: 1000px;
+    height: 1000px;
+    background-image: url("img/earth1.gif");
+    background-repeat: no-repeat;
+    animation: rotate 360s infinite;
+    z-index:0;
+}
+
+#boss1 
+{
+    cursor: url("img/hand.png"), auto;
+    position: fixed;
+    top:50px;
+    left:20%;
+    width: 500px;
+    height: 530px;
+    background-image: url("img/boss1.gif");
+    background-repeat: no-repeat;
+    z-index:99;
+    display: none;
+    transform: scale(1.5);
+	animation: pulse 2s infinite;
+}
+
+#boss_life 
+{
+    padding-top: 10px;
+    padding-left: 5px;
+    left:0;
+    border: 5px solid white;
+    border-radius: 10px;
+    text-align:left;
+    font-size: 2em;
+    color: white;
+    background-color: red;
+    position:absolute;
+    top:2%;
+    width: 200px;
+    height: 50px;
+    right:0;
+    z-index: 55;
+    display: none;
+}
+
+#alien 
+{
+    cursor: url("img/hand.png"), auto;
+    position: absolute;
+    bottom:5%;
+    right: 5%;
+    width: 220px;
+    height: 220px;
+    background-image: url("img/alien.gif");
+    background-repeat: no-repeat;
+    z-index:60;
+    animation: shake 13.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation-iteration-count: infinite;
+    transition: transform .9s;
+}
+
+#alien_s 
+{
+    position: absolute;
+    bottom:5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background-image: url("img/alien_s.gif");
+    background-repeat: no-repeat;
+    z-index:60;
+    animation: shake 23.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation-iteration-count: infinite;
+    transition: transform .9s;
+}
+
+
+
+#monster 
+{
+    position: absolute;
+    bottom:5%;
+    right:10%;
+    width: 500px;
+    height: 405px;
+    background-image: url("img/monster.gif");
+    background-repeat: no-repeat;
+    cursor: url("img/aim.png"), auto;
+    animation: shake 5.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation-iteration-count: infinite;
+    transition: transform .9s;
+}
+
+#clouds 
+{
+    position: fixed;
+    top:0;
+    width:3000px;
+    height: 500px;
+    background-image: url("img/clouds.gif");
+    background-repeat: no-repeat;
+}
+
+#bat 
+{
+    position: absolute;
+    top:10%;
+    width: 200px;
+    height: 105px;
+    background-image: url("img/bat.gif");
+    background-repeat: no-repeat;
+    cursor: url("img/aim.png"), auto;
+    animation:linear infinite alternate;
+    animation-name: fly_horizontal;
+    animation-duration: 50s;
+}
